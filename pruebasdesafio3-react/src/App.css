@@ -1,0 +1,72 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+main{
+  display: flex;
+  justify-content: space-between;
+}
+
+aside{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: rgb(227, 227, 186) solid 4px;
+  border-radius: 0.7rem;
+  margin-top: 9.7rem;
+}
+
+.boxformu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 23rem;
+}
+
+.fade{
+  width: 20rem;
+}
+
+
+
+.table-responsive{
+  width: 50rem;
+}
+
+
+
+.form-control {
+  width: 20rem;
+}
+
+.btn {
+  width: 20rem;
+}
+
+.box-agregarcolaboradores{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+@media (max-width: 768px) {
+ main{
+  display: flex;
+  flex-direction: column;
+}
+
+aside{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: rgb(227, 227, 186) solid 3px;
+  border-radius: 1rem;
+  margin-top: 9.6rem;
+  
+}
+}
