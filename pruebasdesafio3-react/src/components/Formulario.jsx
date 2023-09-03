@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-const Formulario = ({colaboradores, setColaboradores, setFiltrarColaboradores,setAlerta}) => {
-const[datosColaborador,setDatoColaborador] = useState({
+const Formulario = ({colaboradores, setColaboradores, setFiltrarColaboradores,setAlerta}) => { //aqui agregamos como props nuestro estados inciales y setter y nuestro sett de alert
+const[datosColaborador,setDatoColaborador] = useState({ //aqui tenemos 
   nombre:"",
   correo:"",
   edad:"",
@@ -28,7 +28,8 @@ const cambioDeEstado = (e) =>{
 }
 const validarDatos = (e) =>{
   e.preventDefault()
-  const { nombre, correo, edad, cargo, telefono } = datosColaborador;
+  const { nombre, correo, edad, cargo, telefono } = datosColaborador; //aqui hicimos un destructuring , para despues poder ocuparlo en las validaciones
+
   const validarInputs = !nombre || !correo || !edad || !cargo || !telefono
   
   if(validarInputs){
@@ -46,13 +47,13 @@ const validarDatos = (e) =>{
   })
   // Agregar un nuevo ID al colaborador
   const nuevoColaborador = {
-      ...datosColaborador,
+      ...datosColaborador, //aqui porque ponemos datosColaborador, porque si le ponemos el original , nose puede modificar porque no es mutable el colaboradores
       id: colaboradores.length + 1
   };
     
     // Agregar el nuevo colaborador al estado global
-    setColaboradores([...colaboradores, nuevoColaborador]);
-    setFiltrarColaboradores([...colaboradores, nuevoColaborador]);
+    setColaboradores([...colaboradores, nuevoColaborador]); //aqui se hace un spread opereitor a colaboradores, osea a nuestro array de objetos original al cual le pasamos como estado inicial 3 colaboradores y luego agregamos el nuevo colaborador dentro de settercolaborador para que se agrege los nuevos colaboradores a nuestro estado original
+    setFiltrarColaboradores([...colaboradores, nuevoColaborador]);//aqui se hace un spread opereitor a colaboradores, osea copiamos nuestro array de objetos original en el que pasamos como estado inicial 3 colaboradores y luego agregamos el nuevo colaborador dentro de setterfiltrado paraque el filtrado sepa que se agregaron nuevos colaboradores y al momento de buscar los detecte y pueda encontrarlo
 
     // Limpiar el formulario , cuando se complete exitosamente, esto va a borrar lo que se escribio en el input
     setDatoColaborador({

@@ -3,7 +3,8 @@ import { FaTrash } from "react-icons/fa";
 
 const Listado = ({ colaboradores,filtrarColaboradores,setColaboradores,setFiltrarColaboradores }) => {
   const eliminarColaborador = (id) =>{
-    const nuevosColaboradores = colaboradores.filter(colaborador => colaborador.id !== id) 
+    const nuevosColaboradores = colaboradores.filter(colaboradorr => colaboradorr.id !== id)
+    //actualiza colaboradores y filtrarColaboradores
     setColaboradores(nuevosColaboradores)
     setFiltrarColaboradores(nuevosColaboradores)
   }
@@ -20,6 +21,7 @@ const Listado = ({ colaboradores,filtrarColaboradores,setColaboradores,setFiltra
       </td>
     </tr>
   ));
+  
 
   return (
     <>
